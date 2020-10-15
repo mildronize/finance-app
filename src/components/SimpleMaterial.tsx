@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 
 const SimpleMaterial = () => (
     <div>
-        <Button variant="contained" color="primary">
+      <Button variant="contained" color="primary">
       Hello World
     </Button>
     </div>

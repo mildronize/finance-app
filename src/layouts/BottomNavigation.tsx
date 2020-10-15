@@ -1,5 +1,5 @@
-import React , { useEffect } from "react";
-import { makeStyles } from '@material-ui/core/styles';
+import React, { useEffect } from "react";
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import RestoreIcon from '@material-ui/icons/Restore';
@@ -13,14 +13,19 @@ import {
 
 // type AppProps = { currentRoute: string }; 
 
-const useStyles = makeStyles({
-    root: {
-        position: "fixed",
-        left: 0,
-        bottom: 0,
-        width: "100%",
-    },
-});
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        root: {
+            position: "fixed",
+            left: 0,
+            bottom: 0,
+            width: "100%",
+        },
+        verticalOffset: {
+            marginTop: theme.spacing(7),
+        }
+    }),
+);
 
 const MyBottomNavigation = () => {
     const classes = useStyles();
@@ -33,20 +38,24 @@ const MyBottomNavigation = () => {
     }, []);
 
     return (
-        <BottomNavigation
-            value={value}
-            onChange={(event, newValue) => {
-                setValue(newValue);
-            }}
-            showLabels
-            className={classes.root}
-        >
-            <BottomNavigationAction label="Expense" icon={<RestoreIcon />}
-                value="/" component={Link} to="/" />
-            <BottomNavigationAction label="Income" icon={<FavoriteIcon />}
-                value="/income" component={Link} to="/income" />
-            <BottomNavigationAction label="Credit" icon={<LocationOnIcon />} />
-        </BottomNavigation>
+        <div>
+            <div className={classes.verticalOffset} />
+
+            <BottomNavigation
+                value={value}
+                onChange={(event, newValue) => {
+                    setValue(newValue);
+                }}
+                showLabels
+                className={classes.root}
+            >
+                <BottomNavigationAction label="Expense" icon={<RestoreIcon />}
+                    value="/" component={Link} to="/" />
+                <BottomNavigationAction label="Income" icon={<FavoriteIcon />}
+                    value="/income" component={Link} to="/income" />
+                <BottomNavigationAction label="Credit" icon={<LocationOnIcon />} />
+            </BottomNavigation>
+        </div>
     );
 };
 

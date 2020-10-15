@@ -4,8 +4,8 @@ import './App.css';
 import SimpleText from './components/SimpleText';
 import SimpleMaterial from './components/SimpleMaterial';
 import BottomNavigation from './layouts/BottomNavigation';
-import ExpensePage from './pages/expense/ExpensePage';
-import IncomePage from './pages/income/IncomePage';
+import ExpensePage from './pages/expense/Expense';
+import IncomePage from './pages/income/Income';
 
 import {
   BrowserRouter as Router,
