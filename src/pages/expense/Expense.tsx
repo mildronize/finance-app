@@ -6,20 +6,20 @@ import ExpenseListView from './ExpenseListView';
 import Navbar from '../../layouts/Navbar';
 
 import {
-    selectExpense,
+  selectExpense,
 } from './expenseSlice';
 
 const Expense = () => {
-    const dispatch = useDispatch();
-    const expense = useSelector(selectExpense);
+  const dispatch = useDispatch();
+  const expense = useSelector(selectExpense);
 
-    return (
-        <div>
-            <Navbar />
-            <ExpenseListView data={expense} />
-            <BottomNavigation />
-        </div>
-    );
+  return (
+    <div>
+      <Navbar />
+      <ExpenseListView data={expense} />
+      <BottomNavigation />
+    </div>
+  );
 };
 
 export default Expense;

@@ -1,14 +1,14 @@
 import React from "react";
 import Button from '@material-ui/core/Button';
 
-// type AppProps = { message: string }; 
+// type AppProps = { message: string };
 
 const SimpleMaterial = () => (
-    <div>
-      <Button variant="contained" color="primary">
+  <div>
+    <Button variant="contained" color="primary">
       Hello World
     </Button>
-    </div>
+  </div>
 );
 
 export default SimpleMaterial;

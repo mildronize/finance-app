@@ -5,22 +5,22 @@ import { RootState } from '../../app/rootReducer';
 // type StateType = { value: number };
 // const initialState: StateType = []
 export interface Expense {
-    id: number;
-    title: string;
+  id: number;
+  title: string;
 }
-const initialState : Expense[] = [
-    {id: 0, title: "Buy some stuff"},
-    {id: 1, title: "Running"},
+const initialState: Expense[] = [
+  { id: 0, title: "Buy some stuff" },
+  { id: 1, title: "Running" },
 ];
 
 export const counterSlice = createSlice({
-    name: 'expense',
-    initialState,
-    reducers: {
-        addExpense(state, action: PayloadAction<Expense>) {
-            state.push(action.payload);
-        },
+  name: 'expense',
+  initialState,
+  reducers: {
+    addExpense(state, action: PayloadAction<Expense>) {
+      state.push(action.payload);
     },
+  },
 });
 
 

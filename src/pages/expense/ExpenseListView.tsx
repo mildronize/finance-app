@@ -10,43 +10,43 @@ import InboxIcon from '@material-ui/icons/Inbox';
 import DraftsIcon from '@material-ui/icons/Drafts';
 
 import {
-    Expense,
+  Expense,
 } from './expenseSlice';
 
 const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            width: '100%',
-            backgroundColor: theme.palette.background.paper,
-        },
-    }),
+  createStyles({
+    root: {
+      width: '100%',
+      backgroundColor: theme.palette.background.paper,
+    },
+  }),
 );
 
 
 type AppProps = { data: Expense[] };
 
 const ExpenseListView = ({ data }: AppProps) => {
-    const classes = useStyles();
+  const classes = useStyles();
 
-    return (
-        <div className={classes.root}>
-            <List component="nav" aria-label="main mailbox folders">
-                {
-                    data.map((item) => (
-                        <>
-                            <ListItem button>
-                                <ListItemIcon>
-                                    <InboxIcon />
-                                </ListItemIcon>
-                                <ListItemText primary={item.title} />
-                            </ListItem>
-                            <Divider />
-                        </>
-                    ))
-                }
-            </List>
-        </div>
-    );
+  return (
+    <div className={classes.root}>
+      <List component="nav" aria-label="main mailbox folders">
+        {
+          data.map((item) => (
+            <>
+              <ListItem button>
+                <ListItemIcon>
+                  <InboxIcon />
+                </ListItemIcon>
+                <ListItemText primary={item.title} />
+              </ListItem>
+              <Divider />
+            </>
+          ))
+        }
+      </List>
+    </div>
+  );
 };
 
 export default ExpenseListView;

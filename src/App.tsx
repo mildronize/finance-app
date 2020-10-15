@@ -18,18 +18,15 @@ function App() {
   return (
     <Router>
 
-   
-        <Switch>
-         <Route exact path="/">
-           <ExpensePage />
-          </Route>
+      <Switch>
+        <Route exact path="/">
+          <ExpensePage />
+        </Route>
 
-          <Route path="/income">
-            <IncomePage />
-          </Route>
-          
-        </Switch>
-
+        <Route path="/income">
+          <IncomePage />
+        </Route>
+      </Switch>
     </Router>
   );
 }
